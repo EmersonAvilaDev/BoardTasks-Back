@@ -20,7 +20,7 @@ jobs:
       - name: Instalando pacotes do npm
         run: npm install
 
-      - name: Gerandoo documentação do swagger.json
+      - name: Gerando documentação do swagger.json
         run: npm run autoDoc
 
       - name: Apagando pasta node_modules
