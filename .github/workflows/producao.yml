@@ -11,8 +11,8 @@ on:
 
 jobs:
   job1:
-    name: CI - Build e criação de artefato
-    runs-on: ubunto-latest
+    name: CI - Build e criação do artefato
+    runs-on: ubuntu-latest
     steps:
       - name: Pegar código do repositório
         uses: actions/checkout@v3
@@ -24,7 +24,7 @@ jobs:
         run: npm run autoDoc
 
       - name: Apagando pasta node_modules
-        run: rm -rf .git
+        run: rm -rf node_modules
 
       - name: Apagando pasta.git
         run: rm -rf .git
