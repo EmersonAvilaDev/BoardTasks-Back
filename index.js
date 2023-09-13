@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
-const swaggerOption = { customCssUrl: '/swagger-ui.css' };
+const swaggerOptions = { customCssUrl: "/swagger-ui.css" };
 const routes = require("./src/routes");
 const authDocProducao = require("./src/middlewares/authDoc");
 
@@ -27,7 +27,7 @@ if (process.env.NODE_ENV !== "test") {
     `/doc`,
     authDocProducao,
     swaggerUi.serve,
-    swaggerUi.setup(swaggerFile, swaggerOption)
+    swaggerUi.setup(swaggerFile, swaggerOptions)
   );
 }
 
