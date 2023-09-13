@@ -16,7 +16,7 @@ let doc = {
   },
   servers: [
     {
-      url: "http://localhost:4000",
+      url: "http://localhost:4000/",
       description: "Servidor localhost.",
     },
     {
