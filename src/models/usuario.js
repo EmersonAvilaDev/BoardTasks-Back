@@ -3,7 +3,7 @@ const validator = require("validator");
 
 const schema = new mongoose.Schema(
   {
-    name: {
+    nome: {
       type: String,
       required: `é obrigatório!`,
     },
@@ -20,7 +20,7 @@ const schema = new mongoose.Schema(
         message: "inválido!",
       },
     },
-    password: {
+    senha: {
       type: String,
       required: `é obrigatório!`,
       select: false,
