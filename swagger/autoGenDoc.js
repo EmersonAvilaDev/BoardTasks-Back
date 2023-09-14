@@ -1,6 +1,7 @@
 const { default: mongoose } = require("mongoose");
 const mongooseToSwagger = require("mongoose-to-swagger");
 const UserSchema = require("../src/models/usuario.js");
+const taskSchema = require("../src/models/tarefa.js");
 const swaggerAutoGen = require("swagger-autogen")({
   openapi: "3.0.0",
   language: "pt-BR",
@@ -29,7 +30,8 @@ let doc = {
   produces: ["application/json"],
   components: {
     schemas: {
-      Usuario: mongooseToSwagger(UserSchema)
+      Usuario: mongooseToSwagger(UserSchema),
+      Tarefa: mongooseToSwagger(taskSchema)
     }
   }
 };
