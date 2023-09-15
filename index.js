@@ -8,7 +8,7 @@ const authDocProducao = require("./src/middlewares/authDoc");
 const swaggerUi = require("swagger-ui-express");
 const swaggerOption = 
   { 
-    customCssUrl: "node_modules/swagger-ui-dist/swagger-ui.css" 
+    customCssUrl: '/custom.css' 
   };
 
 const app = express();
