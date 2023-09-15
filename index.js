@@ -8,7 +8,7 @@ const authDocProducao = require("./src/middlewares/authDoc");
 const swaggerUi = require("swagger-ui-express");
 const swaggerOption = 
   { 
-    customCssUrl: '/swagger-ui.css', 
+    customCssUrl: '/custom.css', 
     customfavIconUrl: '/favicon.ico',
   };
 
@@ -31,7 +31,7 @@ if (process.env.NODE_ENV !== "test") {
     `/doc`,
     authDocProducao,
     swaggerUi.serve,
-    swaggerUi.setup(swaggerFile, swaggerOption.getAbsoluteFSPath)
+    swaggerUi.setup(swaggerFile, swaggerOption)
   );
 }
 
