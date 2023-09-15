@@ -22,3 +22,5 @@ const authUser = async (req, res, next) => {
     return handleExpectedErros(res, new Error("Token inválido"));
   }
 };
+
+module.exports = authUser;
