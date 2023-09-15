@@ -43,13 +43,15 @@ router.post("/logar", connectDataBase, async function (req, res) {
 
     let respostaBD = await UserSchema.findOne({ email }).select(`+senha`);
     if (respostaBD) {
+
       let senhaCorreta = await bcrypt.compare(senha, respostaBD.senha);
       if (senhaCorreta) {
+
         let token = jwt.sign({ id: respostaBD._id }, process.env.JWT_SECRET, {
           expiresIn: "1d",
         });
 
-        res.header("x-auth-token", token);
+        res.header('x-auth-token', token);
         res.status(200).json({
           status: "OK",
           statusMessage: "Usuário autenticado com sucesso.",
