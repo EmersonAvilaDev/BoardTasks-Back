@@ -9,11 +9,9 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerOption = 
   { 
     customCssUrl: '/swagger-ui.css', 
-    MimeType: 'text/css',
     customSiteTitle: 'Swagger UI',
     customfavIcon: '/favicon.ico',
     customfavIconUrl: '/favicon.ico',
-    customCss: '.swagger-ui .topbar { display: none }'
   };
 
 const app = express();
