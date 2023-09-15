@@ -3,10 +3,13 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
-const swaggerUi = require("swagger-ui-express");
-// const swaggerOptions =;
 const routes = require("./src/routes");
 const authDocProducao = require("./src/middlewares/authDoc");
+const swaggerUi = require("swagger-ui-express");
+const swaggerOption = 
+  { 
+    customCssUrl: "node_modules/swagger-ui-dist/swagger-ui.css" 
+  };
 
 const app = express();
 require("dotenv").config();
@@ -27,7 +30,7 @@ if (process.env.NODE_ENV !== "test") {
     `/doc`,
     authDocProducao,
     swaggerUi.serve,
-    swaggerUi.setup(swaggerFile, { customCssUrl: "/swagger-ui.css" })
+    swaggerUi.setup(swaggerFile, swaggerOption)
   );
 }
 
