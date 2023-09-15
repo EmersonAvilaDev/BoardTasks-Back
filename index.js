@@ -9,8 +9,6 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerOption = 
   { 
     customCssUrl: '/swagger-ui.css', 
-    customSiteTitle: 'Swagger UI',
-    customfavIcon: '/favicon.ico',
     customfavIconUrl: '/favicon.ico',
   };
 
@@ -33,7 +31,7 @@ if (process.env.NODE_ENV !== "test") {
     `/doc`,
     authDocProducao,
     swaggerUi.serve,
-    swaggerUi.setup(swaggerFile, swaggerOption)
+    swaggerUi.setup(swaggerFile, swaggerOption.getAbsoluteFSPath)
   );
 }
 
