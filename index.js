@@ -8,7 +8,12 @@ const authDocProducao = require("./src/middlewares/authDoc");
 const swaggerUi = require("swagger-ui-express");
 const swaggerOption = 
   { 
-    customCssUrl: '/custom.css' 
+    customCssUrl: '/custom.css', 
+    MimeType: 'text/css',
+    customSiteTitle: 'Swagger UI',
+    customfavIcon: '/favicon.ico',
+    customfavIconUrl: '/favicon.ico',
+    customCss: '.swagger-ui .topbar { display: none }'
   };
 
 const app = express();
